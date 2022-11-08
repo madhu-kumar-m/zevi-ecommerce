@@ -1,0 +1,68 @@
+.productsContainer {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.productsHeader {
+    height: 60px;
+    width: 100vw;
+}
+
+.iconSearch {
+    position: relative;
+    height: 35px;
+    line-height: 35px;
+    align-items: center !important;
+    right: 40px;
+    bottom:5px;
+}
+
+.searchInput {
+    height: 35px;
+    width: 30%;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 0 50px 0 10px;
+    margin: 10px 0px;
+}
+
+.sidePanel {
+    position: relative;
+    width: 240px;
+    height: calc(100vh - 60px);
+
+}
+
+.pageBody{
+    position: absolute;
+    top: 60px;
+    left: 240px;
+    min-height: calc(100vh - 60px);
+    max-width: calc(100vw - 240px);
+}
+
+.prodBox{
+    display:flex;
+    width: 80%;
+    height: auto;
+    box-sizing: border-box;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    margin:auto;
+}
+
+
+@media (max-width: 768px) {
+    .sidePanel {
+        width: 100vw;
+        height: auto;
+    }
+
+    .pageBody {
+        position: relative;
+        width: 100vw;
+        left: 0px;
+    }
+
+}
