@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, {useState, useRef } from "react";
 
 import Search from "../../Components/Search/Search";
 import SuggestionBox from "../../Components/SuggestionBox/SuggestionBox";
@@ -34,20 +34,26 @@ export function createRandomProducts(): latestTrendProductsType {
 const LandingPage = () => {
 
     const [showSuggestionBox, setShowSuggestionBox] = useState<boolean>(false)
+    const containerRef = useRef<HTMLDivElement | null>(null);
 
-    const onBlur = () => {
-        setShowSuggestionBox(false);
-    }
+    // const onBlur = () => {
+    // // setShowSuggestionBox(false);
+    // }
 
     const onFocus = () => {
         setShowSuggestionBox(true);
     }
 
+    const mouseLeaveHandler = () => {
+        setShowSuggestionBox(false);
+    }
+
+
     return(
         <div className={styles.bgImage}>
-            <div className={`mx-auto ${styles.searchContainer}`}>
-                <Search  onBlur={onBlur}  onFocus={onFocus} />
-                {showSuggestionBox && <SuggestionBox latestTrendingProducts={latestTrendProducts}/>}
+            <div ref={containerRef} className={`mx-auto ${styles.searchContainer}`}>
+                <Search onFocus={onFocus} />
+                {showSuggestionBox && <SuggestionBox onMouseLeave={mouseLeaveHandler} latestTrendingProducts={latestTrendProducts}/>}
             </div>
            
         </div>

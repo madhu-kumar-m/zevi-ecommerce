@@ -10,3 +10,13 @@
 .list {
     list-style-type: none;
 }
+
+.navBtn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.navBtn:hover {
+ text-decoration: underline;
+}

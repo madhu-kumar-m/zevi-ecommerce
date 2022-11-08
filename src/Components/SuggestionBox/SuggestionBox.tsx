@@ -1,16 +1,23 @@
 import React from 'react';
 
 import styles from "./SuggestionBox.module.css";
+import { useNavigate, Link } from 'react-router-dom';
 
 type suggestionBoxProps = {
     latestTrendingProducts:{
         product_id: string,
         product_name: string,
         product_image: string
-    }[]
+    }[],
+    onMouseLeave: () => void
 }
 
 const SuggestionBox = (props:suggestionBoxProps) => {
+
+    
+
+    //route navigate
+    const Navigator = useNavigate();
 
     let  popularSuggestion:{id:number, name:string}[] = [
         {id:1, name:"Striped Shirt dress"},
@@ -20,18 +27,20 @@ const SuggestionBox = (props:suggestionBoxProps) => {
         {id:5, name:"solid tshirts"},
     ]
 
-
+    const navigate = () => {
+        Navigator("/products");
+    }
 
 
     return(
-        <div className={styles.S_B_Container}>
+        <div onMouseLeave={props.onMouseLeave} className={styles.S_B_Container} >
             <div className="p-2">
             <h5 className="text-start ms-4 mt-2">Latest Trends</h5>
                 <div className="d-md-flex justify-content-around">
                     {props.latestTrendingProducts.map((item)=>{
                         return <span key={item.product_id} className="mx-1">
                             <img className="img-fluid" src={item.product_image} alt={item.product_name}/>
-                            <div>{item.product_name}</div>
+                            <div><button onClick={navigate} className={`${styles.navBtn}`}>{item.product_name}</button></div>
                         </span>
                     })}
                 </div>
@@ -39,13 +48,13 @@ const SuggestionBox = (props:suggestionBoxProps) => {
               <h5 className="text-start ms-4 mt-2 pt-2">Popular Trends</h5>
                 <ul className={`${styles.list}`}>
                     {popularSuggestion.map((item:{id:number, name:string}) => {
-                        return <li key={item.id}><a>{item.name}</a></li>
+                        return <li key={item.id}><Link to="/products">{item.name}</Link></li>
                     })}
                 </ul>
               </div>
             </div>
         </div>
     )
-}
+};
 
 export default SuggestionBox;
