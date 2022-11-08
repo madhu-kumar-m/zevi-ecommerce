@@ -1,0 +1,14 @@
+.bgImage {
+    background: url("../../Assets/images/LandingPage/landing-page-bg.jpg") no-repeat;
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+}
+
+.searchContainer {
+    margin-top: 120px;
+    
+}

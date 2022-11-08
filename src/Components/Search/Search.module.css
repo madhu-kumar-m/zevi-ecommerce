@@ -1,0 +1,28 @@
+.searchInput {
+    height: 55px;
+    width: 50%;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 0 50px 0 10px;
+    box-shadow: 0 0 50px rgb(168, 167, 167);
+}
+
+.iconContainer {
+    position: relative;
+    height: 55px;
+    line-height: 55px;
+    align-items: center !important;
+    right: 40px;
+    bottom:5px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .searchInput {
+        height: 50px;
+        width: 80%;
+        font-size: 30px;
+    }
+  }

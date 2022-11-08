@@ -1,0 +1,22 @@
+.S_B_Container {
+    height: auto;
+    width: 60%;
+    margin: auto;
+    background-color: #fff;
+    color:black;
+    border-radius: 15px;
+}
+
+.list {
+    list-style-type: none;
+}
+
+.navBtn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.navBtn:hover {
+ text-decoration: underline;
+}
