@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router";
-import LandingPage from "../Pages/LandingPage";
+import LandingPage from "../Pages/LandingPage/LandingPage";
 
 const BaseRoutes = () => {
 
@@ -7,7 +7,6 @@ const BaseRoutes = () => {
         <>
             <Routes>
                 <Route path="/" element={<LandingPage/>} />
-
             </Routes>
         </>
     )
